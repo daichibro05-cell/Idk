@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Justin | Gamer Profile</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("ironman.jpg") no-repeat center center/cover;
+    color: white;
+    position: relative;
+}
+
+/* Overlay dark background */
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    z-index: 0;
+}
+
+/* Main container */
+.container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 380px;
+    margin: 12px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.55);
+    border-radius: 20px;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    box-shadow: 0 0 18px rgba(255, 80, 0, 0.6);
+}
+
+/* Profile picture */
+.profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff5a00;
+    margin-bottom: 10px;
+}
+
+/* Name styling */
+h1 {
+    color: #ff5a00;
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+/* Info styling */
+.info {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+
+/* Buttons container */
+.buttons {
+    margin: 12px 0;
+}
+
+button {
+    width: 100%;
+    background: transparent;
+    color: #ff5a00;
+    border: 2px solid #ff5a00;
+    padding: 10px 12px;
+    border-radius: 12px;
+    margin: 6px 0;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff5a00;
+    color: black;
+}
+
+/* Output (Games, Movies, Location) */
+#output {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* Map styling */
+#output iframe {
+    width: 100%;
+    border: 0;
+    border-radius: 12px;
+    height: 230px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- Profile picture -->
+    <img src="profile.jpg" class="profile-pic" alt="Justin">
+
+    <!-- Full name -->
+    <h1>JUSTIN POULL L. ABALOS</h1>
+
+    <!-- Info -->
+    <div class="info">🎮 Gamer | 🎬 Marvel Fan</div>
+    <div class="info">🎓 1st Year College – Bachelor of Science in Computer Engineering</div>
+
+    <!-- Buttons -->
+    <div class="buttons">
+        <button onclick="showGames()">My Favorite Games</button>
+        <button onclick="showMovies()">My Favorite Movies</button>
+        <button onclick="showLocation()">My Location</button>
+    </div>
+
+    <!-- Output section -->
+    <div id="output"></div>
+
+</div>
+
+<script>
+// Function to show favorite games
+function showGames() {
+    document.getElementById("output").innerHTML =
+        "🎮 Mobile Legends<br>" +
+        "🎮 Call of Duty Mobile<br>" +
+        "🎮 Life is Strange";
+}
+
+// Function to show favorite movies
+function showMovies() {
+    document.getElementById("output").innerHTML =
+        "🎬 Guardians of the Galaxy Vol. 1<br>" +
+        "🎬 Guardians of the Galaxy Vol. 2<br>" +
+        "🎬 Thor: Ragnarok";
+}
+
+// Function to show location (with Google Map embed)
+function showLocation() {
+    document.getElementById("output").innerHTML =
+        "📍 Block 30 Lot 32, PCUPRPG Ville Ondoy<br>" +
+        "Brgy. San Jose, Antipolo City, Rizal<br><br>" +
+        "<iframe " +
+        "loading='lazy' referrerpolicy='no-referrer-when-downgrade' " +
+        "src='https://maps.google.com/maps?q=Block%2030%20Lot%2032%20PCUPRPG%20Ville%20Ondoy%20Brgy.%20San%20Jose%20Antipolo%20City%20Rizal&z=17&output=embed'>" +
+        "</iframe>";
+}
+</script>
+
+</body>
+</html>1<br>" +
+        "🎬 Guardians of the Galaxy Vol. 2";
+}
+
+function showLocation() {
+    document.getElementById("output").innerHTML =
+        "📍 My Location: Ondoyville Basketball Court";
+}
+</script>
+
+</body>
+</html>ation: Ondoyville Basketball Court";
+        }
+    </script>
+
+</body>
+</html>
