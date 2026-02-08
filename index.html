@@ -2,115 +2,118 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Justin | Gamer Profile</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+    font-family:Arial, sans-serif;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
+html,body{
+    width:100%;
+    height:100%;
+    overflow-x:hidden;
 }
 
-body {
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: url("ironman.jpg") no-repeat center center/cover;
-    color: white;
-    position: relative;
+body{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:url("ironman.jpg") no-repeat center center / cover;
+    position:relative;
 }
 
-/* Overlay dark background */
-body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 0;
+/* dark overlay */
+body::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.65);
 }
 
-/* Main container */
-.container {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    max-width: 380px;
-    margin: 12px;
-    padding: 20px;
-    background: rgba(0, 0, 0, 0.55);
-    border-radius: 20px;
-    text-align: center;
+/* main card */
+.container{
+    position:relative;
+    z-index:1;
+    width:calc(100% - 24px);
+    max-width:360px;
+    background:rgba(0,0,0,0.55);
+    border-radius:24px;
+    padding:18px 16px 22px;
+    text-align:center;
+    color:white;
+    box-shadow:0 0 18px rgba(255,90,0,.6);
     backdrop-filter: blur(6px);
-    box-shadow: 0 0 18px rgba(255, 80, 0, 0.6);
 }
 
-/* Profile picture */
-.profile-pic {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 3px solid #ff5a00;
-    margin-bottom: 10px;
+/* profile picture */
+.profile-pic{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #ff6a00;
+    margin-bottom:10px;
 }
 
-/* Name styling */
-h1 {
-    color: #ff5a00;
-    font-size: 20px;
-    margin-bottom: 6px;
+/* name */
+.name{
+    font-size:20px;
+    font-weight:800;
+    color:#ff6a00;
+    letter-spacing:1px;
+    margin-bottom:10px;
 }
 
-/* Info styling */
-.info {
-    font-size: 14px;
-    margin-bottom: 6px;
+/* info */
+.info{
+    line-height:1.6;
+    margin-bottom:16px;
+    font-size:13px;
 }
 
-/* Buttons container */
-.buttons {
-    margin: 12px 0;
+/* buttons */
+.btn{
+    width:100%;
+    padding:12px;
+    border-radius:16px;
+    margin-bottom:10px;
+    border:2px solid #ff6a00;
+    background:transparent;
+    color:#ff6a00;
+    font-weight:bold;
+    font-size:14px;
+    cursor:pointer;
 }
 
-button {
-    width: 100%;
-    background: transparent;
-    color: #ff5a00;
-    border: 2px solid #ff5a00;
-    padding: 10px 12px;
-    border-radius: 12px;
-    margin: 6px 0;
-    font-weight: bold;
-    cursor: pointer;
+.btn:hover,
+.btn.active{
+    background:#ff6a00;
+    color:black;
 }
 
-button:hover {
-    background: #ff5a00;
-    color: black;
+/* output box */
+.output{
+    margin-top:12px;
+    padding:12px;
+    border-radius:14px;
+    background:rgba(0,0,0,0.6);
+    font-size:13px;
+    line-height:1.6;
 }
 
-/* Output (Games, Movies, Location) */
-#output {
-    margin-top: 10px;
-    font-size: 14px;
-    line-height: 1.5;
-}
-
-/* Map styling */
-#output iframe {
-    width: 100%;
-    border: 0;
-    border-radius: 12px;
-    height: 230px;
+/* map */
+.output iframe{
+    width:100%;
+    height:180px;
+    border:0;
+    border-radius:10px;
 }
 </style>
 </head>
@@ -119,70 +122,68 @@ button:hover {
 
 <div class="container">
 
-    <!-- Profile picture -->
+    <!-- profile image -->
     <img src="profile.jpg" class="profile-pic" alt="Justin">
 
-    <!-- Full name -->
-    <h1>JUSTIN POULL L. ABALOS</h1>
-
-    <!-- Info -->
-    <div class="info">🎮 Gamer | 🎬 Marvel Fan</div>
-    <div class="info">🎓 1st Year College – Bachelor of Science in Computer Engineering</div>
-
-    <!-- Buttons -->
-    <div class="buttons">
-        <button onclick="showGames()">My Favorite Games</button>
-        <button onclick="showMovies()">My Favorite Movies</button>
-        <button onclick="showLocation()">My Location</button>
+    <div class="name">
+        JUSTIN POULL L. ABALOS
     </div>
 
-    <!-- Output section -->
-    <div id="output"></div>
+    <div class="info">
+        🎮 Gamer | 🎬 Marvel Fan<br>
+        🎓 1st Year College – Bachelor of Science in Computer Engineering
+    </div>
+
+    <button class="btn" id="gamesBtn" onclick="showGames()">My Favorite Games</button>
+    <button class="btn" id="moviesBtn" onclick="showMovies()">My Favorite Movies</button>
+    <button class="btn" id="locationBtn" onclick="showLocation()">My Location</button>
+
+    <div class="output" id="output">
+        Click a button above.
+    </div>
 
 </div>
 
 <script>
-// Function to show favorite games
-function showGames() {
+function resetBtn(){
+    document.getElementById("gamesBtn").classList.remove("active");
+    document.getElementById("moviesBtn").classList.remove("active");
+    document.getElementById("locationBtn").classList.remove("active");
+}
+
+function showGames(){
+    resetBtn();
+    document.getElementById("gamesBtn").classList.add("active");
+
     document.getElementById("output").innerHTML =
-        "🎮 Mobile Legends<br>" +
         "🎮 Call of Duty Mobile<br>" +
+        "🎮 Mobile Legends<br>" +
         "🎮 Life is Strange";
 }
 
-// Function to show favorite movies
-function showMovies() {
+function showMovies(){
+    resetBtn();
+    document.getElementById("moviesBtn").classList.add("active");
+
     document.getElementById("output").innerHTML =
         "🎬 Guardians of the Galaxy Vol. 1<br>" +
         "🎬 Guardians of the Galaxy Vol. 2<br>" +
         "🎬 Thor: Ragnarok";
 }
 
-// Function to show location (with Google Map embed)
-function showLocation() {
+function showLocation(){
+    resetBtn();
+    document.getElementById("locationBtn").classList.add("active");
+
     document.getElementById("output").innerHTML =
-        "📍 Block 30 Lot 32, PCUPRPG Ville Ondoy<br>" +
+        "📍 Block 30, Lot 32, PCUPRPG Ville Ondoy<br>" +
         "Brgy. San Jose, Antipolo City, Rizal<br><br>" +
-        "<iframe " +
-        "loading='lazy' referrerpolicy='no-referrer-when-downgrade' " +
-        "src='https://maps.google.com/maps?q=Block%2030%20Lot%2032%20PCUPRPG%20Ville%20Ondoy%20Brgy.%20San%20Jose%20Antipolo%20City%20Rizal&z=17&output=embed'>" +
-        "</iframe>";
+        "<iframe loading='lazy' src='https://maps.google.com/maps?q=Block%2030%20Lot%2032%20PCUPRPG%20Ville%20Ondoy%20Brgy.%20San%20Jose%20Antipolo%20City%20Rizal&z=17&output=embed'></iframe>";
 }
 </script>
 
 </body>
-</html>1<br>" +
-        "🎬 Guardians of the Galaxy Vol. 2";
-}
-
-function showLocation() {
-    document.getElementById("output").innerHTML =
-        "📍 My Location: Ondoyville Basketball Court";
-}
-</script>
-
-</body>
-</html>ation: Ondoyville Basketball Court";
+</html>";
         }
     </script>
 
